@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Fábio Pizzini",
+  "description": "Website médico oficial do Dr. Fábio Pizzini - Nutrologia e Medicina do Esporte em Sorocaba e Região",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
