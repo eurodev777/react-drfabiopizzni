@@ -1,54 +1,58 @@
-import { ArrowRight, Star, HeartPulse, Activity, Flame } from "lucide-react";
+import { ArrowRight, Star, HeartPulse, Activity, Flame, Shield } from "lucide-react";
 import { DR_INFO } from "../data";
+import heroImg from "../assets/images/sports_medicine_hero_1781029947478.png";
 
 export default function Hero() {
   const highlightPoints = [
-    { icon: <Flame className="w-5 h-5 text-brand-green" />, text: "Emagrecimento Saudável e Sustentável" },
-    { icon: <Activity className="w-5 h-5 text-brand-green" />, text: "Alta Performance & Ganho de Massa" },
-    { icon: <HeartPulse className="w-5 h-5 text-brand-green" />, text: "Qualidade de Vida e Equilíbrio Metabólico" },
+    { icon: <Flame className="w-5 h-5 text-brand-green" />, text: "Emagrecimento Saudável de Alta Performance" },
+    { icon: <Activity className="w-5 h-5 text-brand-green" />, text: "Preparação Metabólica & Ganho de Massa" },
+    { icon: <HeartPulse className="w-5 h-5 text-brand-green" />, text: "Nutrologia Integrada & Longevidade Ativa" },
   ];
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-brand-gray-50 overflow-hidden">
-      {/* Decorative clean background layouts resembling clinical aesthetic */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-gray-100/40 rounded-l-[100px] -z-10 hidden lg:block" />
-      <div className="absolute top-1/3 left-10 w-72 h-72 rounded-full bg-brand-green/5 blur-3xl -z-10" />
+    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#030508] overflow-hidden">
+      {/* Dynamic Background glows resembling sports high-tech vibe */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_top_right,rgba(108,220,4,0.08),transparent_50%)] -z-10" />
+      <div className="absolute -bottom-10 left-10 w-96 h-96 rounded-full bg-brand-green/3 blur-3xl -z-10" />
+      
+      {/* High-tech grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(108,220,4,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(108,220,4,0.01)_1px,transparent_1px)] bg-[size:40px_40px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column Text Content */}
-          <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+          <div className="lg:col-span-6 space-y-8 text-center lg:text-left">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-gray-200 shadow-xs">
-              <span className="flex h-2 w-2 rounded-full bg-brand-green animate-pulse" />
-              <span className="text-xs font-mono font-semibold tracking-wider text-brand-gray-600 uppercase">
-                Medicina Baseada em Evidências
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gray-100 border border-brand-green/20 shadow-lg">
+              <span className="flex h-2 w-2 rounded-full bg-brand-green animate-pulse glow-green-sm" />
+              <span className="text-xs font-mono font-bold tracking-wider text-brand-green uppercase">
+                EMAGRECIMENTO & PERFORMANCE • SOROCABA
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-gray-950 leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
               A melhor opção em{" "}
-              <span className="text-brand-green block sm:inline underline decoration-brand-gray-300 decoration-wavy underline-offset-4">
-                emagrecimento, nutrição
+              <span className="text-brand-green block">
+                Emagrecimento e Performance
               </span>{" "}
-              e treinamento de Sorocaba!
+              física da Região!
             </h1>
 
             {/* Rich Subtext as highlighted in the request */}
-            <p className="text-lg text-brand-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Você acaba de encontrar a melhor assessoria integrada em Sorocaba e Região para transformar sua composição corporal, otimizar sua nutrição diária e potencializar seus resultados físicos.
+            <p className="text-base sm:text-lg text-brand-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+              Transforme seu corpo, otimize sua saúde nutricional e alcance resultados consistentes. Uma abordagem médica esportiva moderna feita para você evoluir de verdade.
             </p>
 
             {/* Feature Check list */}
-            <div className="space-y-3 max-w-md mx-auto lg:mx-0 text-left">
+            <div className="space-y-3.5 max-w-md mx-auto lg:mx-0 text-left">
               {highlightPoints.map((pt, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="p-1 rounded bg-white shadow-xs border border-brand-gray-100 flex items-center justify-center">
+                  <div className="p-1.5 rounded bg-brand-gray-100 border border-brand-green/10 flex items-center justify-center">
                     {pt.icon}
                   </div>
-                  <span className="text-sm font-medium text-brand-gray-800">{pt.text}</span>
+                  <span className="text-sm font-semibold text-brand-gray-800">{pt.text}</span>
                 </div>
               ))}
             </div>
@@ -59,100 +63,68 @@ export default function Hero() {
                 href={`https://wa.me/${DR_INFO.whatsappNumber}?text=${encodeURIComponent(DR_INFO.whatsappDefaultMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 bg-brand-green hover:bg-brand-green-hover text-brand-gray-950 font-bold text-base rounded-xl flex items-center justify-center gap-3 transform hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-md glow-green cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 bg-brand-green hover:bg-brand-green-hover text-brand-gray-50 font-black text-sm sm:text-base rounded-xl flex items-center justify-center gap-3 transform hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-lg glow-green cursor-pointer"
                 id="hero-cta-whatsapp"
               >
                 AGENDAR CONSULTA NO WHATSAPP
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-5 h-5" />
               </a>
 
               <a
                 href="#avaliacao"
-                className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-brand-gray-100 border border-brand-gray-300 text-brand-gray-800 font-semibold text-base rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                className="w-full sm:w-auto px-6 py-4 bg-brand-gray-100 hover:bg-brand-gray-200 border border-brand-green/20 hover:border-brand-green/50 text-white font-bold text-sm sm:text-base rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
-                Avaliar Meu Perfil de Saúde
+                Avaliar Meu Perfil Esportivo
               </a>
             </div>
 
             {/* Customer Trust and Clinic Stats */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-6 border-t border-brand-gray-200/80">
-              <div className="flex items-center gap-1.5 text-amber-500">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-6 border-t border-brand-gray-200/20">
+              <div className="flex items-center gap-1.5 text-brand-green">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star key={i} className="w-4 h-4 fill-current text-brand-green" />
                 ))}
-                <span className="text-xs font-semibold text-brand-gray-800 ml-1">
-                  Excelente no Google
+                <span className="text-xs font-bold text-white ml-1">
+                  Avaliações 5 Estrelas
                 </span>
               </div>
-              <div className="h-4 w-px bg-brand-gray-200 hidden sm:block" />
-              <div className="text-xs text-brand-gray-600">
-                Atendimento presencial em <strong>Sorocaba - SP</strong>
+              <div className="h-4 w-px bg-brand-gray-200/30 hidden sm:block" />
+              <div className="text-xs text-brand-gray-600 font-mono">
+                RQE 130.636 | Cuidado Médico Premium
               </div>
             </div>
 
           </div>
 
-          {/* Right Column Modern Aesthetic Health UI Concept Card representation */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center">
-            <div className="relative w-full max-w-sm sm:max-w-md bg-white p-6 sm:p-8 rounded-2xl premium-shadow border border-brand-gray-100 overflow-hidden transform hover:scale-[1.01] transition-transform">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green-light/60 rounded-full blur-2xl" />
+          {/* Right Column with our generated rich high-tech athletic image */}
+          <div className="lg:col-span-6 relative mt-6 lg:mt-0 flex justify-center">
+            <div className="relative w-full max-w-md sm:max-w-lg rounded-2xl overflow-hidden group">
+              {/* Outer Neon corner accent line */}
+              <div className="absolute inset-0 border-2 border-brand-green/20 rounded-2xl group-hover:border-brand-green/60 transition-colors pointer-events-none z-10" />
               
-              <div className="relative space-y-6">
-                
-                {/* Visual Medical Aesthetic Header representation */}
-                <div className="flex justify-between items-start">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-brand-green/20 flex items-center justify-center">
-                      <HeartPulse className="w-6 h-6 text-brand-green-hover" />
-                    </div>
-                    <div>
-                      <h3 className="font-display font-bold text-brand-gray-950 text-base leading-none">
-                        Dr. Fábio Pizzini
-                      </h3>
-                      <p className="text-xs font-mono text-brand-gray-600 pt-1">RQE 130.636 | Medicina Esportiva</p>
-                    </div>
+              <img
+                src={heroImg}
+                alt="Médico analisando dados de performance de atleta"
+                referrerPolicy="no-referrer"
+                className="w-full h-auto object-cover rounded-2xl shadow-2xl transform transition-transform duration-700 group-hover:scale-105"
+              />
+
+              {/* Float Widget - Live Performance Track tag */}
+              <div className="absolute bottom-5 left-5 right-5 bg-brand-gray-50/90 backdrop-blur-md p-4 rounded-xl border border-brand-green/30 shadow-2xl flex justify-between items-center z-10 animate-pulse">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-brand-green/20 flex items-center justify-center">
+                    <Activity className="w-5 h-5 text-brand-green" />
                   </div>
-                  <span className="text-[10px] font-mono font-bold bg-brand-green-light text-brand-gray-800 px-2 py-1 rounded bg-brand-green/10">
-                    Atendimento Premium
+                  <div>
+                    <h4 className="text-xs font-bold tracking-tight text-white leading-none">Status Metabólico</h4>
+                    <p className="text-[10px] font-mono text-brand-green pt-1 uppercase">Otimização máxima ativa</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <span className="text-xs font-mono font-bold bg-brand-green/10 text-brand-green px-2 py-1 rounded">
+                    RQE 130.636
                   </span>
                 </div>
-
-                <div className="p-4 rounded-xl bg-brand-gray-100/50 border border-brand-gray-200/50 space-y-3">
-                  <span className="text-xs font-mono font-semibold text-brand-green block">PREPARAÇÃO & COMPOSIÇÃO</span>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-brand-gray-800">Emagrecimento Saudável</span>
-                    <span className="text-sm font-bold text-brand-gray-950">Nutrologia Esportiva</span>
-                  </div>
-                  {/* Visual health bar indicator using our brand-green */}
-                  <div className="w-full bg-brand-gray-200 h-2 rounded-full overflow-hidden">
-                    <div className="bg-brand-green h-full rounded-full w-[88%]" />
-                  </div>
-                </div>
-
-                {/* Patient focus quote */}
-                <div className="relative">
-                  <span className="absolute -top-3 -left-2 text-7xl text-brand-green-light font-serif leading-none select-none -z-10">“</span>
-                  <p className="text-sm italic text-brand-gray-600 relative z-10 leading-relaxed pl-3 font-light">
-                    &quot;O segredo de resultados consistentes em Sorocaba consiste em unir planejamento médico esportivo rigoroso e reeducação metabólica personalizada.&quot;
-                  </p>
-                </div>
-
-                {/* Visual Schedule Quick Form Link */}
-                <a
-                  href={`https://wa.me/${DR_INFO.whatsappNumber}?text=${encodeURIComponent(DR_INFO.whatsappDefaultMsg)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 bg-brand-gray-100 hover:bg-brand-green hover:text-brand-gray-950 rounded-xl flex items-center justify-center gap-2 text-sm font-bold text-brand-gray-800 transition-all group"
-                >
-                  Verificar horários disponíveis
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
-
-                {/* Safety Seal info */}
-                <div className="text-[10px] font-mono text-center text-brand-gray-600 pt-2 border-t border-brand-gray-100">
-                  Consulte a disponibilidade de cobertura e retorno para Sorocaba e Região
-                </div>
-
               </div>
             </div>
           </div>

@@ -31,7 +31,7 @@ export default function Header() {
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-3 border-b border-brand-gray-100"
+          ? "bg-brand-gray-50/95 backdrop-blur-md shadow-lg py-3 border-b border-brand-green/10"
           : "bg-transparent py-5"
       }`}
     >
@@ -40,14 +40,14 @@ export default function Header() {
           {/* Logo / Title */}
           <div className="flex flex-col">
             <a href="#home" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-brand-green flex items-center justify-center font-display text-white font-bold text-xl glow-green transform transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 rounded-lg bg-brand-green flex items-center justify-center font-display text-brand-gray-50 font-bold text-xl glow-green transform transition-transform group-hover:scale-105">
                 FP
               </div>
               <div>
-                <span className="font-display text-lg font-bold tracking-tight text-brand-gray-950 transition-colors group-hover:text-brand-green block leading-none">
+                <span className="font-display text-lg font-bold tracking-tight text-white transition-colors group-hover:text-brand-green block leading-none">
                   Dr. Fábio Pizzini
                 </span>
-                <span className="text-[10px] font-mono tracking-wider text-brand-gray-600 block uppercase pt-1">
+                <span className="text-[10px] font-mono tracking-wider text-brand-green/80 block uppercase pt-1 font-bold">
                   Medicina do Esporte & Nutrologia
                 </span>
               </div>
@@ -60,7 +60,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-brand-gray-800 hover:text-brand-green transition-colors relative group py-2"
+                className="text-sm font-medium text-brand-gray-600 hover:text-brand-green transition-colors relative group py-2"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-green transition-all duration-300 group-hover:w-full"></span>
@@ -115,7 +115,7 @@ export default function Header() {
               href={`https://wa.me/${DR_INFO.whatsappNumber}?text=${encodeURIComponent(DR_INFO.whatsappDefaultMsg)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-brand-green hover:bg-brand-green-hover text-brand-gray-950 font-semibold text-sm rounded-lg flex items-center gap-2 transform active:scale-95 transition-all shadow-sm duration-200 glow-green"
+              className="px-4 py-2 bg-brand-green hover:bg-brand-green-hover text-brand-gray-50 font-bold text-sm rounded-lg flex items-center gap-2 transform active:scale-95 transition-all shadow-sm duration-200 glow-green"
             >
               <Phone className="w-4 h-4" />
               Agendar Consulta
@@ -127,7 +127,7 @@ export default function Header() {
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-brand-gray-800 hover:text-brand-green p-2 focus:outline-none"
+              className="text-white hover:text-brand-green p-2 focus:outline-none"
               aria-label="Alternar menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -138,7 +138,7 @@ export default function Header() {
 
       {/* Mobile Menu panel */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-brand-gray-200 animate-fadeIn" id="mobile-navigation">
+        <div className="md:hidden bg-brand-gray-100 border-b border-brand-green/20 animate-fadeIn" id="mobile-navigation">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <a
@@ -150,7 +150,7 @@ export default function Header() {
                 {link.name}
               </a>
             ))}
-            <div className="h-px bg-brand-gray-100 my-3"></div>
+            <div className="h-px bg-brand-gray-200 my-3"></div>
 
             {/* Social channels in mobile sidebar */}
             <div className="flex items-center space-x-6 px-3 py-2 text-brand-gray-600">
@@ -173,7 +173,7 @@ export default function Header() {
                 href={`https://wa.me/${DR_INFO.whatsappNumber}?text=${encodeURIComponent(DR_INFO.whatsappDefaultMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-brand-green hover:bg-brand-green-hover text-brand-gray-950 font-bold rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 shadow-sm"
+                className="w-full py-3 bg-brand-green hover:bg-brand-green-hover text-brand-gray-50 font-bold rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 shadow-sm"
               >
                 <Phone className="w-4 h-4" />
                 Agendar no WhatsApp
